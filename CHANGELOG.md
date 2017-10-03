@@ -1,4 +1,12 @@
-> **LoginRadius Ionic-2 SDK Change Log** provides information regarding what has changed, more specifically what changes, improvements and bug fix has been made to the SDK. For more details please refer to the [LoginRadius API Documention](https://docs.loginradius.com/api/v2/mobile-libraries/ionic-2)
+> **LoginRadius Ionic-2 SDK Change Log** provides information regarding what has changed, more specifically what changes, improvements and bug fix has been made to the SDK. For more details please refer to the [LoginRadius API Documentation](https://docs.loginradius.com/api/v2/mobile-libraries/ionic-2)
+
+
+### Version 1.0.1
+Released on **October 03,  2017**
+
+##### Bug Fixes
+   
+  - Fixed IOS build time issue in Xcode-9.
 
 
 ### Version 1.0.0
