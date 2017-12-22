@@ -3,7 +3,7 @@
 
 
 ### Version 2.0.0
-Released on **November 02,  2017**
+Released on **December 22,  2017**
 
 ##### Enhancements
 
