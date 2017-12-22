@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/Users/loginradius/Desktop/DemoApp/platforms/android/cordova-social-vk/demoapp248558-vksdk_library/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w720dp-v13/values-w720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 60,
+                    "endOffset": 111
+                },
+                "from": {
+                    "file": "/Users/loginradius/Desktop/DemoApp/platforms/android/cordova-social-vk/demoapp248558-vksdk_library/res/values-w720dp/dimen.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 60,
+                        "endOffset": 111
+                    }
+                }
+            }
+        ]
+    }
+]

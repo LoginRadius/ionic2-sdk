@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/loginradius/Desktop/DemoApp/platforms/android/cordova-social-vk/demoapp248558-vksdk_library/build/intermediates/res/merged/debug/drawable/vk_gray_transparent_shape.xml",
+        "source": "/Users/loginradius/Desktop/DemoApp/platforms/android/cordova-social-vk/demoapp248558-vksdk_library/res/drawable/vk_gray_transparent_shape.xml"
+    },
+    {
+        "merged": "/Users/loginradius/Desktop/DemoApp/platforms/android/cordova-social-vk/demoapp248558-vksdk_library/build/intermediates/res/merged/debug/drawable/vk_share_send_button_background.xml",
+        "source": "/Users/loginradius/Desktop/DemoApp/platforms/android/cordova-social-vk/demoapp248558-vksdk_library/res/drawable/vk_share_send_button_background.xml"
+    },
+    {
+        "merged": "/Users/loginradius/Desktop/DemoApp/platforms/android/cordova-social-vk/demoapp248558-vksdk_library/build/intermediates/res/merged/debug/drawable/vk_clear_shape.xml",
+        "source": "/Users/loginradius/Desktop/DemoApp/platforms/android/cordova-social-vk/demoapp248558-vksdk_library/res/drawable/vk_clear_shape.xml"
+    }
+]

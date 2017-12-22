@@ -42,6 +42,7 @@ this.navCtrl.push(AfterLoginRedirectionPage);
 this.navCtrl.push(AfterLoginRedirectionPage);
  }
  else{
+ alert("tt");
  alert(JSON.stringify(params.response));
  }
  }else if(params.action == "login"){
@@ -50,6 +51,7 @@ this.navCtrl.push(AfterLoginRedirectionPage);
  this.navCtrl.push(AfterLoginRedirectionPage);
  
  }else{
+ alert("tt0");
  alert(JSON.stringify(params.response));
  }
  }

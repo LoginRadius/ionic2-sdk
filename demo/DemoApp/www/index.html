@@ -10,7 +10,7 @@
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
-  
+   <meta http-equiv="Content-Security-Policy" content="default-src gap://ready file://* *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src 'self' data: blob: *; media-src 'self' mediastream: blob:; connect-src * blob:">
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
@@ -41,8 +41,8 @@
 
 <script type="text/javascript">
        
-	    var apiKey ="<your loginradius api key>";
-        var appName ="<LoginRadius site name>";
+	      var apiKey = "<your loginradius api key>";
+        var appName = "<LoginRadius site name>";
         var commonOptions = {};
         commonOptions.apiKey = apiKey;
         commonOptions.appName = appName;
@@ -52,16 +52,18 @@
         commonOptions.sott ="<Get_Sott>";
         commonOptions.verificationUrl = "https://auth.lrcontent.com/mobile/verification/index.html";
         commonOptions.callbackUrl = 'http://localhost:8100/';
-	    commonOptions.isMobile = false;
+	      commonOptions.isMobile = true;
         commonOptions.formValidationMessage = true;
-		LRObject = new LoginRadiusV2(commonOptions);
+		    LRObject = new LoginRadiusV2(commonOptions);
 		
 	    function socialLogin (url){
-		var lroptions = {};
-		lroptions.apiKey=apiKey;
-		lroptions.facebookNative=false;
+		    var lroptions = {};
+		    lroptions.apiKey=apiKey;
+		    lroptions.facebookNative=false;
         lroptions.googleNative = false;
         lroptions.googlewebid=""; // if you set google native login 
+        lroptions.vkNative = false;
+        lroptions.vkAppId="";  // if you set vkontakte native login 
         window.angularComponentRef.zone.run(function () { window.angularComponentRef.componentFn(url,lroptions)});
 };
 	

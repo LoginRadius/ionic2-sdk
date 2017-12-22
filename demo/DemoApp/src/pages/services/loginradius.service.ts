@@ -36,7 +36,31 @@ declare var LRObject: any;
         }), (msg => {
             alert('error: ' + msg);
         }));
-    } else {
+    }else if (lroptions.vkNative && url.indexOf("vkontakte") !== -1) {
+                    var vkAppId = "";
+
+                    if (lroptions.vkAppId != null || lroptions.vkAppId != "") {
+                        vkAppId = lroptions.vkAppId;
+                    }
+                  ( < any > window).SocialVk.init(vkAppId);
+
+                   ( < any > window).SocialVk.login(["photos"], (res => {
+
+            if(res['token']===undefined){
+                 this.vkNative(JSON.parse(res), lroptions);
+                 console.log(JSON.parse(res));
+            }else{
+                console.log(res);
+                this.vkNative(res['token'], lroptions);
+            }
+            
+           // 
+              
+         }),(error => {
+            alert(error);
+        }));
+
+    }else {
         return LRObject.util.openWindow(url);
     }
 }
@@ -371,6 +395,76 @@ getEmailPromptAutoLogin(lrcallback) {
 }
 
 
+getnoRegistrationPasswordLessLogin(lrcallback) {
+    var params: any = {};
+    var options: any = {};
+    options.onSuccess = function(response) {
+        //On Success
+        params.response = response;
+        params.action = "noregistrationpasswordlesslogin";
+        lrcallback.callback(params);
+        console.log(response);
+    };
+    options.onError = function(errors) {
+        //On Error
+        params.response = errors;
+        params.action = "noregistrationpasswordlesslogin";
+        lrcallback.callback(params);
+        console.log(errors);
+    }
+    options.container = "passwordLessLogin-container";
+
+    LRObject.init("noRegistrationPasswordLessLogin", options);
+
+}
+
+getUpdateSecurityQuestion(lrcallback) {
+    var params: any = {};
+    var options: any = {};
+    options.onSuccess = function(response) {
+        //On Success
+        params.response = response;
+        params.action = "updatesecurityquestion";
+        lrcallback.callback(params);
+        console.log(response);
+    };
+    options.onError = function(errors) {
+        //On Error
+        params.response = errors;
+        params.action = "updatesecurityquestion";
+        lrcallback.callback(params);
+        console.log(errors);
+    }
+    options.container = "securityQ-container";
+
+    LRObject.init("updateSecurityQuestion", options);
+
+}
+
+getResetPasswordBySecurityQuestion(lrcallback) {
+    var params: any = {};
+    var options: any = {};
+    options.onSuccess = function(response) {
+        //On Success
+        params.response = response;
+        params.action = "resetPasswordBySecurityQuestion";
+        lrcallback.callback(params);
+        console.log(response);
+    };
+    options.onError = function(errors) {
+        //On Error
+        params.response = errors;
+        params.action = "resetPasswordBySecurityQuestion";
+        lrcallback.callback(params);
+        console.log(errors);
+    }
+    options.container = "resetPasswordBySecQ-container";
+
+    LRObject.init("resetPasswordBySecurityQuestion", options);
+
+}
+
+
 getValidateToken(lrcallback, token) {
     var params: any = {};
     LRObject.api.validateToken(token,
@@ -453,6 +547,18 @@ googleNative(userData, lroptions) {
 
 facebookNative(userData, lroptions) {
     this.restRequest("https://api.loginradius.com/api/v2/access_token/facebook?key=" + lroptions.apiKey + "&fb_access_token=" + userData['authResponse']['accessToken'])
+        .subscribe(res => {
+                this.LoginRadiusNativeCallback(res);
+
+            },
+            (err) => console.log(err),
+            () => console.log("done !")
+        );
+};
+
+
+vkNative(userData, lroptions) {
+    this.restRequest("https://api.loginradius.com/api/v2/access_token/vkontakte?key=" + lroptions.apiKey + "&vk_access_token=" + userData.token)
         .subscribe(res => {
                 this.LoginRadiusNativeCallback(res);
 

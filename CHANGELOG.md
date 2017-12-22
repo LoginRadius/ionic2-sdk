@@ -1,12 +1,26 @@
-> **LoginRadius Ionic-2 SDK Change Log** provides information regarding what has changed, more specifically what changes, improvements and bug fix has been made to the SDK. For more details please refer to the [LoginRadius API Documentation](https://docs.loginradius.com/api/v2/mobile-libraries/ionic-2)
+> **LoginRadius Ionic-2 SDK Change Log** provides information regarding what has changed, more specifically what changes, improvements and bug fix has been made to the SDK. For more details please refer to the [LoginRadius API Documention](https://docs.loginradius.com/api/v2/mobile-libraries/ionic-2)
 
+
+
+### Version 2.0.0
+Released on **November 02,  2017**
+
+##### Enhancements
+
+  - Added new vk native login for better native user experience.
+  - Added new risk based authentication API.
+  - Added new email prompt Auto login API.
+  - Added new update security question API.
+  - Added new no registration or password less login, API.
+  - Added new resetpassword by security question API.
+  - Significantly improved code performance.
 
 ### Version 1.0.1
-Released on **October 03,  2017**
+Released on **September 28,  2017**
 
 ##### Bug Fixes
    
-  - Fixed IOS build time issue in Xcode-9.
+  - Fixed ios build time issue in Xcode-9.
 
 
 ### Version 1.0.0

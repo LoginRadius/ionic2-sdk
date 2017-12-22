@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ionic App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+   <meta http-equiv="Content-Security-Policy" content="default-src gap://ready file://* *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; img-src 'self' data: blob: *; media-src 'self' mediastream: blob:; connect-src * blob:">
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+
+  <!-- The bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+<script src="https://auth.lrcontent.com/v2/js/LoginRadiusV2.js"></script>
+
+
+<script type="text/javascript">
+       
+	    var apiKey ="eaf87168-9066-432d-b61c-6c895bf08e6d";
+        var appName ="internal-giriraj";
+        var commonOptions = {};
+        commonOptions.apiKey = apiKey;
+        commonOptions.appName = appName;
+        commonOptions.hashTemplate = true;
+        commonOptions.accessTokenResponse = true;
+        commonOptions.phoneLogin = false;
+        commonOptions.sott ="<Get_Sott>";
+        commonOptions.verificationUrl = "https://auth.lrcontent.com/mobile/verification/index.html";
+        commonOptions.callbackUrl = 'http://localhost:8100/';
+	      commonOptions.isMobile = true;
+        commonOptions.formValidationMessage = true;
+		    LRObject = new LoginRadiusV2(commonOptions);
+		
+	    function socialLogin (url){
+		    var lroptions = {};
+		    lroptions.apiKey=apiKey;
+		    lroptions.facebookNative=false;
+        lroptions.googleNative = true;
+        lroptions.googlewebid="222"; // if you set google native login 
+        lroptions.vkNative = true;
+        lroptions.vkAppId="6243350";  // if you set vkontakte native login 
+        window.angularComponentRef.zone.run(function () { window.angularComponentRef.componentFn(url,lroptions)});
+};
+	
+</script>
+</body>
+</html>
