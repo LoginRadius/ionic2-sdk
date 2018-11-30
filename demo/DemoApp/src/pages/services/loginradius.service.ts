@@ -371,50 +371,73 @@ getTwoFactorAuthentication(lrcallback) {
 }
 
 
-getEmailPromptAutoLogin(lrcallback) {
+getSmartLogin(lrcallback) {
     var params: any = {};
     var options: any = {};
     options.onSuccess = function(response) {
         //On Success
         params.response = response;
-        params.action = "emailpromptautologin";
+        params.action = "smartlogin";
         lrcallback.callback(params);
         console.log(response);
     };
     options.onError = function(errors) {
         //On Error
         params.response = errors;
-        params.action = "emailpromptautologin";
+        params.action = "smartlogin";
         lrcallback.callback(params);
         console.log(errors);
     }
-    options.container = "autologin-container";
+    options.container = "smartLogin-container";
 
-    LRObject.init("autoLogin", options);
+    LRObject.init("smartLogin", options);
 
 }
 
 
-getnoRegistrationPasswordLessLogin(lrcallback) {
+getonetouchLogin(lrcallback) {
     var params: any = {};
     var options: any = {};
     options.onSuccess = function(response) {
         //On Success
         params.response = response;
-        params.action = "noregistrationpasswordlesslogin";
+        params.action = "onetouchlogin";
         lrcallback.callback(params);
         console.log(response);
     };
     options.onError = function(errors) {
         //On Error
         params.response = errors;
-        params.action = "noregistrationpasswordlesslogin";
+        params.action = "onetouchlogin";
         lrcallback.callback(params);
         console.log(errors);
     }
-    options.container = "passwordLessLogin-container";
+    options.container = "onetouchLogin-container";
 
-    LRObject.init("noRegistrationPasswordLessLogin", options);
+    LRObject.init("onetouchLogin", options);
+
+}
+
+
+getpasswordlessLoginValidate(lrcallback) {
+    var params: any = {};
+    var options: any = {};
+    options.onSuccess = function(response) {
+        //On Success
+        params.response = response;
+        params.action = "passwordlessloginvalidate";
+        lrcallback.callback(params);
+        console.log(response);
+    };
+    options.onError = function(errors) {
+        //On Error
+        params.response = errors;
+        params.action = "passwordlessloginvalidate";
+        lrcallback.callback(params);
+        console.log(errors);
+    }
+ 
+    LRObject.init("passwordlessLoginValidate", options);
 
 }
 
@@ -498,6 +521,85 @@ getInvalidateToken(lrcallback, token) {
             lrcallback.callback(params);
             console.log(errors);
         });
+}
+
+
+resendEmailVerification(email,handle) {
+    var params: any = {};
+    params.email = email;
+    var onSuccess: any = function(response) {
+        handle(response);
+    };
+    var onError: any = function(response) {
+        handle(response);
+    };
+    LRObject.api.resendEmailVerification(params, onSuccess, onError);
+}
+
+verifyOTP(phone,otp,handle) {
+    var params: any = {};
+    var params1: any = {};
+    params.phone = phone;
+    params1.otp = otp;
+    var onSuccess: any = function(response) {
+        handle(response);
+    };
+    var onError: any = function(response) {
+        handle(response);
+    };
+
+    LRObject.api.verifyOTP(params1, params, onSuccess, onError);
+}
+
+
+resendOTP(phone,handle) {
+    var params: any = {};
+    params.phone = phone;
+    var onSuccess: any = function(response) {
+        handle(response);
+    };
+    var onError: any = function(response) {
+        handle(response);
+    };
+    LRObject.api.resendOTP(params, onSuccess, onError);
+}
+
+checkPhoneNumberAvailability(phone,handle) {
+    var params: any = {};
+    params.phone = phone;
+    var onSuccess: any = function(response) {
+        handle(response);
+    };
+    var onError: any = function(response) {
+        handle(response);
+    };
+    LRObject.api.checkPhoneNumberAvailability(params, onSuccess, onError);
+}
+
+
+checkEmailAvailability(email,handle) {
+    var params: any = {};
+    params.email = email;
+    var onSuccess: any = function(response) {
+        handle(response);
+    };
+    var onError: any = function(response) {
+        handle(response);
+    };
+    LRObject.api.checkEmailAvailability(params, onSuccess, onError);
+}
+
+
+checkUserNameAvailability(username,handle) {
+    var params: any = {};
+    params.username = username;
+    var onSuccess: any = function(response) {
+        handle(response);
+    };
+    var onError: any = function(response) {
+        handle(response);
+    };
+    LRObject.api.checkUserNameAvailability(params, onSuccess, onError);
 }
 
 getLogout(lrcallback) {

@@ -1,5 +1,0 @@
-// GENERATED FILE - DO NOT EDIT
-include ":"
-include ":CordovaLib"
-include ":cordova-social-vk:vksdk_library"
-project(":cordova-social-vk:vksdk_library").projectDir = new File("cordova-social-vk/demoapp248558-vksdk_library")
